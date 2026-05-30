@@ -1,11 +1,111 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOAO WITOR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Agro Forte | Conectando Campo e Cidade</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts para estética mais rural e moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
+
+    <div class="app-wrapper">
+        <!-- Header dinâmico com tema -->
+        <header class="main-header">
+            <div class="logo-area">
+                <i class="fas fa-tractor"></i>
+                <h1>Agro<span>Forte</span></h1>
+            </div>
+            <p class="tagline">🌾 Unindo solo fértil e inovação urbana 🌆</p>
+        </header>
+
+        <!-- Painel de conexão campo <-> cidade -->
+        <section class="connection-panel">
+            <div class="card campo-card" id="campoCard">
+                <div class="card-icon">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <h2>Campo</h2>
+                <p class="desc">Tradição, colheita, terra fértil e alimentos que nutrem o mundo.</p>
+                <div class="stats" id="campoStats">
+                    <div class="stat-item"><i class="fas fa-seedling"></i> <span id="colheitasQtde">1240</span> toneladas</div>
+                    <div class="stat-item"><i class="fas fa-tractor"></i> <span id="produtividade">92%</span> eficiência</div>
+                </div>
+                <button class="action-btn enviar-btn" data-origem="campo">
+                    <i class="fas fa-truck-fast"></i> Enviar produção para cidade
+                </button>
+            </div>
+
+            <div class="flow-connector">
+                <i class="fas fa-exchange-alt"></i>
+                <span class="flow-text">Conexão Agro</span>
+            </div>
+
+            <div class="card cidade-card" id="cidadeCard">
+                <div class="card-icon">
+                    <i class="fas fa-city"></i>
+                </div>
+                <h2>Cidade</h2>
+                <p class="desc">Mercados, tecnologia, distribuição e consumo consciente.</p>
+                <div class="stats" id="cidadeStats">
+                    <div class="stat-item"><i class="fas fa-shopping-basket"></i> <span id="alimentosRecebidos">890</span> toneladas</div>
+                    <div class="stat-item"><i class="fas fa-charging-station"></i> <span id="inovacaoIndex">78%</span> inovação</div>
+                </div>
+                <button class="action-btn enviar-btn" data-origem="cidade">
+                    <i class="fas fa-microchip"></i> Enviar tecnologia ao campo
+                </button>
+            </div>
+        </section>
+
+        <!-- Histórico de conexões / Logs colaborativos -->
+        <section class="historico-section">
+            <div class="section-title">
+                <i class="fas fa-handshake"></i>
+                <h3>Últimas conexões entre Campo & Cidade</h3>
+                <button id="limparLogBtn" class="clear-btn"><i class="fas fa-trash-alt"></i> Limpar</button>
+            </div>
+            <div class="log-container" id="logContainer">
+                <div class="log-entry system-msg">
+                    <i class="fas fa-leaf"></i> <span>🌱 Sistema Agro Forte inicializado. A parceria campo ↔ cidade fortalece o agronegócio sustentável!</span>
+                </div>
+                <div class="log-entry success-msg">
+                    <i class="fas fa-truck"></i> <span>🚜 Envio simbólico: 45 toneladas de grãos orgânicos para distribuição urbana.</span>
+                </div>
+                <div class="log-entry info-msg">
+                    <i class="fas fa-chart-line"></i> <span>📡 Cidade envia softwares de gestão agrícola e sensores inteligentes ao campo.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Métricas interativas + jogo simbólico de cooperação -->
+        <section class="interactive-metrics">
+            <div class="metric-box">
+                <h4><i class="fas fa-globe-americas"></i> Índice de Integração</h4>
+                <div class="progress-wrapper">
+                    <div class="progress-bar" id="integracaoBar" style="width: 64%;"></div>
+                </div>
+                <span id="integracaoPercentual">64%</span>
+                <p class="helper-text">Quanto mais trocas, maior o desenvolvimento sustentável!</p>
+            </div>
+            <div class="metric-box acao-rapida">
+                <h4><i class="fas fa-bolt"></i> Ação Rápida</h4>
+                <div class="quick-actions">
+                    <button id="simularColheitaBtn" class="quick-btn"><i class="fas fa-seedling"></i> Simular Grande Colheita</button>
+                    <button id="inovacaoUrbanaBtn" class="quick-btn"><i class="fas fa-lightbulb"></i> Inovação Acelerada</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé com frase de impacto -->
+        <footer class="main-footer">
+            <p>🌿 <strong>Agro Forte</strong> — Do campo para a cidade, tecnologia e alimento andando juntos. 🌿</p>
+            <p class="small">Projeto demonstrativo de integração sustentável | Dados simulados em tempo real</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
